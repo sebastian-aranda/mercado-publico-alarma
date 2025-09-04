@@ -17,9 +17,8 @@ export function TenderMonitoring(res: TenderResources) {
       // Linking - acceso typesafe a recursos
       link: bindingsForTenderMonitoring(res),
     },
-    schedule: IS_PROD
-      ? "rate(1 hour)" // Producción: cada hora
-      : "rate(1 minute)", // Dev: cada 5 minutos para testing
+    schedule: "rate(1 hour)", // Producción: cada hora
+
     enabled: true,
   });
 }

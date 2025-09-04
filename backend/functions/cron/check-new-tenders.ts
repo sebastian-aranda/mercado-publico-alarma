@@ -63,6 +63,9 @@ export const handler = async (event: ScheduledEvent) => {
       }
     } else {
       console.log('ℹ️ No new tenders found');
+      
+      // Notificación periódica para confirmar que el cron funciona
+      await notifier.sendMessage(`✅ Monitoreo ejecutado correctamente - ${new Date().toLocaleString('es-CL')} - Revisadas ${allTenders.length} licitaciones, ${filteredTenders.length} con keywords relevantes, 0 nuevas`);
     }
 
     // 6. Estadísticas finales
